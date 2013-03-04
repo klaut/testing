@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+    <div class="container">
+
+      <h2>My Account</h2>
+
+      <div id="account-settings"></div>
+
+    </div>
+
+    <script type="text/template" id="my-account-tmpl">
+      <p>Username: <span id="displayUsername"><%= username %></span></p>
+      <p>Email: <span id="displayEmail"><%= email %></span></p>
+      <button class="btn btn-primary" id='edit' >Edit Account</button>
+    </script>
+
+    <script type="text/template" id="edit-account-tmpl">
+      <div class="alert alert-error hide"></div>
+      <form class ="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="inputUsername">Username</label>
+          <div class="controls">
+            <input type="text" id="inputUsername" placeholder="Username" value="<%= username %>">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail">Email</label>
+          <div class="controls">
+            <input type="text" id="inputEmail" placeholder="Email" value="<%= email %>">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" id="save">Save changes</button>
+          <button type="button" class="btn" id="cancel">Cancel</button>
+        </div>
+      </form>
+    </script>
+
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/lib/underscore-min.js" ></script>
+    <script src="/lib/backbone-min.js"></script>
+    <script src="/js/models/user.js"></script>
+    <script src="/js/views/accountView.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
